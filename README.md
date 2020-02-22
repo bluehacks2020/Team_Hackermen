@@ -1,6 +1,6 @@
 # blue_hacks_kuwento
 
-A new Flutter project.
+A storybook mobile application for Blue Hacks 2020.
 
 ## Getting Started
 
