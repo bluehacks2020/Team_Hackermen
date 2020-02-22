@@ -37,13 +37,14 @@ class _SplashScreenState extends State<SplashScreen>{
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 50.0,
-                        child: Icon(
-                          Icons.shopping_cart,
-                          color: Colors.greenAccent,
-                          size: 50.0,
+                      SizedBox(
+                        width: 200.0,
+                        height: 100.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                       Padding(padding: EdgeInsets.only(top: 10.0),
