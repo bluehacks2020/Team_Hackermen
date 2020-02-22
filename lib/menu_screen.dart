@@ -52,8 +52,8 @@ class _MenuScreenState extends State<MenuScreen> {
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _buildFoodItem('assets/home.png', 'Alamat ng Pinya', ''),
-                          _buildFoodItem('assets/home2.png', 'Noli me Tangre', ''),
+                          _buildStoryButton('assets/home.png', 'Alamat ng Pinya', ''),
+                          _buildStoryButton('assets/home2.png', 'Noli me Tangre', ''),
 
                         ]))),
                     Row(
@@ -68,7 +68,7 @@ class _MenuScreenState extends State<MenuScreen> {
     );
   }
 
-  Widget _buildFoodItem(String imgPath, String foodName, String price) {
+  Widget _buildStoryButton(String imgPath, String foodName, String price) {
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
         child: InkWell(
