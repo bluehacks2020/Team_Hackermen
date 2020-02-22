@@ -17,6 +17,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  chewie: ^0.9.7
 
 flutter:
   uses-material-design: true
@@ -28,4 +29,5 @@ flutter:
     - assets/checked.png
     - assets/home2.png
     - assets/splash_screen_title.png
+    - assets/alam1_alamat.mp4
 
