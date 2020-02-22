@@ -10,6 +10,9 @@ class MyApp extends StatelessWidget {
           theme :ThemeData(primaryColor: Colors.red, accentColor: Colors.yellowAccent),
           debugShowCheckedModeBanner: false,
           home: SplashScreen(),
+          routes: <String, WidgetBuilder>{
+          //"/MenuScreen": (BuildContext context) => new MenuScreen()  
+          }
           );
   }
 }
@@ -23,7 +26,7 @@ class _SplashScreenState extends State<SplashScreen>{
   @override 
     void initState(){
       super.initState();
-      Timer(Duration(seconds: 3),()=>print("Splash Done <insert change screen action>"));
+      //Timer(Duration(seconds: 3),()=>Navigator.of(context).pushNamed(name));
 
     }
 
