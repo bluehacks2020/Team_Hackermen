@@ -3,14 +3,15 @@ import 'package:blue_hacks_kuwento/splash_screen.dart';
 import 'dart:async';
 import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 class TestScreen extends StatefulWidget {
   @override
   _TestScreenState createState() => _TestScreenState();
 }
 
-class _TestScreenState extends State<TestScreen>{
-  	@override
+class _TestScreenState extends State<TestScreen> {
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -24,6 +25,20 @@ class _TestScreenState extends State<TestScreen>{
             ),
             looping: true,
           ),
+          FadeAnimatedTextKit(
+            duration: Duration(milliseconds: 20000),
+            text: [
+              'Mahal na mahal ni Aling Rosa ang kanyang anak na si Pina.  Inaalagaan niya itong mabuti at hindi niya pinagagawa sa bahay upang hindi mapagod.  Masaya na siyang nagsisilbi sa anak at gumawa ng lahat ng trabaho sa bahay. Si Pina ay lumaki sa layaw dahil sa kagagawan ni Aling Rosa.',
+              'Gustuhin man niyang turuan itong gumawa sa bahay at magbago ng ugali ay hindi na niya magawa.  Ayaw nang baguhin ni Pina ang kanyang nakasanayang masarap na buhay.  Kung kaya’t napilitan si Aling Rosa na kahit na matanda na ay siya pa rin ang nagtatrabaho at gumawa ng lahat ng gawain sa bahay.',
+              'Isang araw ay nagkasakit si Aling Rosa.  Mahinang-mahina siya at hindi na makabangon sa higaan.  Nagmakaawa siya sa anak na magluto ng pagkain upang hindi sila magutom na mag-ina.'],
+            textStyle: TextStyle(
+              fontFamily: 'Montserrat',
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.black,
+            ),
+            onTap: () {},
+          )
         ],
       ),
     );
@@ -89,4 +104,3 @@ class _ChewieListItemState extends State<ChewieListItem> {
     _chewieController.dispose();
   }
 }
-

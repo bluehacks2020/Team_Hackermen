@@ -11,14 +11,13 @@ class _MenuScreenState extends State<MenuScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255,209,238,157),
+      backgroundColor: Color.fromARGB(255, 209, 238, 157),
       body: ListView(
         children: <Widget>[
           Padding(
             padding: EdgeInsets.only(top: 15.0, left: 10.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              
             ),
           ),
           SizedBox(height: 25.0),
@@ -32,7 +31,6 @@ class _MenuScreenState extends State<MenuScreen> {
                         fontWeight: FontWeight.bold,
                         fontSize: 25.0)),
                 SizedBox(width: 10.0),
-
               ],
             ),
           ),
@@ -52,13 +50,13 @@ class _MenuScreenState extends State<MenuScreen> {
                     child: Container(
                         height: MediaQuery.of(context).size.height - 300.0,
                         child: ListView(children: [
-                          _buildStoryButton('assets/home.png', 'Alamat ng Pinya', ''),
-                          _buildStoryButton('assets/home2.png', 'Noli me Tangre', ''),
-
+                          _buildStoryButton(
+                              'assets/home.png', 'Alamat ng Pinya', ''),
+                          _buildStoryButton(
+                              'assets/home2.png', 'Noli me Tangere', ''),
                         ]))),
-                    Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  
                 )
               ],
             ),
@@ -72,47 +70,34 @@ class _MenuScreenState extends State<MenuScreen> {
     return Padding(
         padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
         child: InkWell(
-          onTap: () {Navigator.of(context).pushNamed('/TestScreen');},
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Container(
-                child: Row(
-                  children: [
-                    Hero(
+            onTap: () {
+              Navigator.of(context).pushNamed('/TestScreen');
+            },
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: <Widget>[
+                Container(
+                    child: Row(children: [
+                  Hero(
                       tag: imgPath,
                       child: Image(
-                        image: AssetImage(imgPath),
-                        fit: BoxFit.cover,
-                        height: 75.0,
-                        width: 75.0
-                      )
-                    ),
-                    SizedBox(width: 10.0),
-                    Column(
+                          image: AssetImage(imgPath),
+                          fit: BoxFit.cover,
+                          height: 75.0,
+                          width: 75.0)),
+                  SizedBox(width: 10.0),
+                  Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children:[
-                        Text(
-                          foodName,
-                          style: TextStyle(
-                            fontSize: 17.0,
-                            fontWeight: FontWeight.bold
-                          )
-                        ),
-                        Text(
-                          price,
-                          style: TextStyle(
-                            fontSize: 15.0,
-                            color: Colors.grey
-                          )
-                        )
-                      ]
-                    )
-                  ]
-                )
-              ),
-            ],
-          )
-        ));
+                      children: [
+                        Text(foodName,
+                            style: TextStyle(
+                                fontSize: 17.0, fontWeight: FontWeight.bold)),
+                        Text(price,
+                            style:
+                                TextStyle(fontSize: 15.0, color: Colors.grey))
+                      ])
+                ])),
+              ],
+            )));
   }
 }

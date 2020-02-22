@@ -2,30 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:blue_hacks_kuwento/menu_screen.dart';
 import 'dart:async';
 
-
-class SplashScreen extends StatefulWidget{
+class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => new _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen>{
-  
+class _SplashScreenState extends State<SplashScreen> {
   @override
-  void initState(){
+  void initState() {
     super.initState();
-    Timer(Duration(seconds: 3),()=> {Navigator.of(context).pushNamed('/MenuScreen')});
-
+    Timer(Duration(seconds: 3),
+        () => {Navigator.of(context).pushNamed('/MenuScreen')});
   }
 
-
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return new Scaffold(
       body: Stack(
         fit: StackFit.expand,
-        children:<Widget>[
+        children: <Widget>[
           Container(
-            decoration: BoxDecoration(color: Color.fromARGB(255,238,227,157),),
+            decoration: BoxDecoration(
+              color: Color.fromARGB(255, 238, 227, 157),
+            ),
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -41,37 +40,45 @@ class _SplashScreenState extends State<SplashScreen>{
                         height: 100.0,
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Color.fromARGB(255,238,227,157),
+                            color: Color.fromARGB(255, 238, 227, 157),
                             image: DecorationImage(
-                              image: AssetImage('assets/splash_screen_title.png'), fit: BoxFit.cover,),
+                              image:
+                                  AssetImage('assets/splash_screen_title.png'),
+                              fit: BoxFit.cover,
+                            ),
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
                       ),
-                      Padding(padding: EdgeInsets.only(top: 10.0),
+                      Padding(
+                        padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        "kuwento",style: TextStyle(
-                          color: Colors.white,
-                          fontSize:24.0,
-                          fontWeight: FontWeight.bold),
+                        "kuwento",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 24.0,
+                            fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
                 ),
               ),
-              Expanded(flex: 1,
+              Expanded(
+                flex: 1,
                 child: Column(
-                  mainAxisAlignment:MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     CircularProgressIndicator(),
                     Padding(
-                      padding: EdgeInsets.only(top:20.0),
+                      padding: EdgeInsets.only(top: 20.0),
                     ),
-                    Text("Kuwento Loading",style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.bold),
+                    Text(
+                      "Kuwento Loading",
+                      style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 18.0,
+                          fontWeight: FontWeight.bold),
                     )
                   ],
                 ),
