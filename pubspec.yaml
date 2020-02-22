@@ -70,3 +70,10 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+assets:
+  - assets/home.png
+  - assets/film.png
+  - assets/hatdog.jpeg
+  - assets/download.png
+  - assets/checked.png
+  - assets/house.png

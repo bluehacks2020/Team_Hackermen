@@ -139,13 +139,13 @@ class _MenuScreenState extends State<MenuScreen>
                     height: MediaQuery.of(context).size.height - 300.00,
                     child: ListView(
                       children: [
-                        _MenuButtons('assets/checked.png', 'Mga Kuwento', 'Pick a story from our library.'),
-                        _MenuButtons('assets/downlaod.png', 'Diksyonaryo', 'Learn the definitions of words!'),
-                        _MenuButtons('assets/film.png', 'Wakas', 'Exit the Application.'),
-                        _MenuButtons('assets/checked.png', 'Settings', 'Pick a story from our library.'),
-                        _MenuButtons('assets/checked.png', 'Gabay', 'Pick a story from our library.'),
-                        _MenuButtons('assets/checked.png', 'Larawan', 'Pick a story from our library.'),
-                        _MenuButtons('assets/checked.png', 'Stories', 'Pick a story from our library.'),
+                        _MenuButtons('assets/home.jpeg', 'Mga Kuwento', 'Pumili ng kuwento.'),
+                        _MenuButtons('assets/download.png', 'Diksyonaryo', 'Matutunan ang salita.'),
+                        _MenuButtons('assets/film.png', 'Wakas', 'Umalis sa app.'),
+                        _MenuButtons('assets/checked.png', 'Settings', 'Ayusin ang settings.'),
+                        _MenuButtons('assets/home.png', 'Gabay', 'Gabay para sa app.'),
+                        _MenuButtons('assets/hatdog.png', 'Larawan', 'Mga litrato na ginamit.'),
+                        _MenuButtons('assets/download.png', 'Stories', 'Fuck u'),
                       ]
                     )
                   )
@@ -178,8 +178,8 @@ Widget _MenuButtons(String iconPath, String buttonName, String subtext)
                   child: Image(
                     image: AssetImage(iconPath),
                     fit: BoxFit.cover,
-                    height:75.0,
-                    width: 75.0
+                    height: 100.0,
+                    width: 100.0
                   )
                 ),
                 SizedBox(width: 10.0),
@@ -190,9 +190,17 @@ Widget _MenuButtons(String iconPath, String buttonName, String subtext)
                     style: TextStyle(
                       fontFamily: 'Open Sans',
                       fontSize: 18.0,
-                      fontWeight: FontWeight.bold,
-                        color: Colors.grey
+                      fontWeight: FontWeight.bold
                     )
+                    ),
+                    Text(
+                      subtext,
+                      style: TextStyle(
+                        fontFamily: 'Open Sans',
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.bold,
+                          color: Colors.grey,
+                      )
                     )
                   ]
                 )
