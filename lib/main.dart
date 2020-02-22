@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 void main(){
   runApp(MyApp());
 }
@@ -6,19 +7,30 @@ void main(){
 class MyApp extends StatelessWidget {
   build(BuildContext context){
     return MaterialApp(
-          theme :ThemeData(primaryColor: Colors.red, accentColor: Colors.yellowAccent),
-          debugShowCheckedModeBanner: false,
-          home: MenuScreen(),
-          );
+        theme :ThemeData(primaryColor: Colors.red, accentColor: Colors.yellowAccent),
+        debugShowCheckedModeBanner: false,
+        home: SplashScreen(),
+        routes: <String, WidgetBuilder>{
+          "/MenuScreen": (BuildContext context) => new MenuScreen()
+        }
+    );
   }
 }
 
-/*class SplashScreen extends StatefulWidget{
+class SplashScreen extends StatefulWidget{
   @override
   _SplashScreenState createState() => new _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen>{
+  @override
+  void initState(){
+    super.initState();
+    Timer(Duration(seconds: 3),()=>Navigator.of(context).pushNamed('/MenuScreen'));
+
+  }
+
+
   @override
   Widget build(BuildContext context){
     return new Scaffold(
@@ -37,27 +49,44 @@ class _SplashScreenState extends State<SplashScreen>{
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      CircleAvatar(
-                        backgroundColor: Colors.white,
-                        radius: 50.0,
-                        child: Icon(
-                          Icons.home,
-                          color: Colors.greenAccent,
-                          size: 50.0,
+                      SizedBox(
+                        width: 200.0,
+                        height: 100.0,
+                        child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
                         ),
                       ),
                       Padding(padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        "Kuwento",style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize:24.0,
-                                  fontWeight: FontWeight.bold),
+                        "kuwento",style: TextStyle(
+                          color: Colors.white,
+                          fontSize:24.0,
+                          fontWeight: FontWeight.bold),
                       )
                     ],
                   ),
                 ),
-              )
+              ),
+              Expanded(flex: 1,
+                child: Column(
+                  mainAxisAlignment:MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircularProgressIndicator(),
+                    Padding(
+                      padding: EdgeInsets.only(top:20.0),
+                    ),
+                    Text("Kuwento Loading",style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 18.0,
+                        fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
             ],
           )
         ],
@@ -65,7 +94,6 @@ class _SplashScreenState extends State<SplashScreen>{
     );
   }
 }
-*/
 class MenuScreen extends StatefulWidget{
   @override
   _MenuScreenState createState() => _MenuScreenState();
