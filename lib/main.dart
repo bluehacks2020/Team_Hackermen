@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 void main(){
   runApp(MyApp());
 }
@@ -19,6 +20,14 @@ class SplashScreen extends StatefulWidget{
 }
 
 class _SplashScreenState extends State<SplashScreen>{
+  @override 
+    void initState(){
+      super.initState();
+      Timer(Duration(seconds: 3),()=>print("Splash Done <insert change screen action>"));
+
+    }
+
+
   @override
   Widget build(BuildContext context){
     return new Scaffold(
@@ -50,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen>{
                       Padding(padding: EdgeInsets.only(top: 10.0),
                       ),
                       Text(
-                        "Kuwento",style: TextStyle(
+                        "kuwento",style: TextStyle(
                                   color: Colors.white,
                                   fontSize:24.0,
                                   fontWeight: FontWeight.bold),
@@ -58,7 +67,23 @@ class _SplashScreenState extends State<SplashScreen>{
                     ],
                   ),
                 ),
-              )
+              ),
+              Expanded(flex: 1,
+                child: Column(
+                  mainAxisAlignment:MainAxisAlignment.center,
+                  children: <Widget>[
+                    CircularProgressIndicator(),
+                    Padding(
+                      padding: EdgeInsets.only(top:20.0),
+                    ),
+                    Text("Kuwento Loading",style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18.0, 
+                      fontWeight: FontWeight.bold),
+                    )
+                  ],
+                ),
+              ),
             ],
           )
         ],
