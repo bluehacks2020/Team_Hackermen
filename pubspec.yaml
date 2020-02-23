@@ -30,7 +30,10 @@ flutter:
     - assets/checked.png
     - assets/home2.png
     - assets/splash_screen_title.png
-    - assets/alam1_alamat.mp4
+    - assets/a1.mp4
+    - assets/a2.mp4
+    - assets/a5.mp4
+
   fonts:
   - family: Montserrat-Regular
     fonts:
