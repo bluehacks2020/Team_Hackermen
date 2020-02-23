@@ -5,9 +5,11 @@ import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
+
 class TestScreen extends StatefulWidget {
   @override
   _TestScreenState createState() => _TestScreenState();
+
 }
 
 class _TestScreenState extends State<TestScreen> {
@@ -89,7 +91,7 @@ class _ChewieListItemState extends State<ChewieListItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(0.0),
       child: Chewie(
         controller: _chewieController,
       ),

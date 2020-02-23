@@ -11,8 +11,10 @@ void main(){
 class MyApp extends StatelessWidget {
   build(BuildContext context){
     return MaterialApp(
-        theme :ThemeData(primaryColor: Colors.red, accentColor: Colors.yellowAccent),
-        debugShowCheckedModeBanner: false,
+        theme :ThemeData(
+            primaryColor: Colors.lightGreenAccent,
+            accentColor: Colors.yellowAccent),
+            debugShowCheckedModeBanner: false,
         home: SplashScreen(),
         routes: <String, WidgetBuilder>{
           "/MenuScreen": (BuildContext context) => new MenuScreen(),

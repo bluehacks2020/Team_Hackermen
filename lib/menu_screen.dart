@@ -36,10 +36,10 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
           SizedBox(height: 40.0),
           Container(
-            height: MediaQuery.of(context).size.height - 185.0,
+            height: MediaQuery.of(context).size.height - 125.0,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0)),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(75.0), topRight: Radius.circular(75.0)),
             ),
             child: ListView(
               primary: false,
