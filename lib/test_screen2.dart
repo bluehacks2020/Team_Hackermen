@@ -5,14 +5,14 @@ import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-class TestScreen extends StatefulWidget {
+class TestScreen2 extends StatefulWidget {
   @override
-  _TestScreenState createState() => _TestScreenState();
+  _TestScreen2State createState() => _TestScreen2State();
 }
 
-class _TestScreenState extends State<TestScreen> {
+class _TestScreen2State extends State<TestScreen2> {
   int index = 0;
-  
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -22,14 +22,14 @@ class _TestScreenState extends State<TestScreen> {
         children: <Widget>[
           ChewieListItem(
             videoPlayerController: VideoPlayerController.asset(
-              'assets/alam1_alamat.mp4',
+              'assets/a2.mp4',
             ),
             looping: true,
           ),
           FadeAnimatedTextKit(
             duration: Duration(milliseconds: 20000),
             text: [
-              textChooser(index)],
+              'Isang araw ay nagkasakit si Aling Rosa.  Mahinang-mahina siya at hindi na makabangon sa higaan.  Nagmakaawa siya sa anak na magluto ng pagkain upang hindi sila magutom na mag-ina.'],
             textStyle: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 20.0,
@@ -37,51 +37,25 @@ class _TestScreenState extends State<TestScreen> {
               color: Colors.black,
             ),
           ),
-		  BottomNavigationBar(
+          BottomNavigationBar(
               onTap: (int index) {
-			  refresh(context, '/TestScreen');
-			  },
+                Navigator.of(context).pushNamed('/TestScreen3');
+              },
               items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_back_ios),
-              title: Text('Previous'),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_forward_ios),
-              title: Text('Next'),
-            ),
-          ]
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.arrow_drop_up),
+                  title: Text(' '),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.arrow_forward_ios),
+                  title: Text('Next'),
+                ),]
           )
         ],
       ),
     );
-    }
-
-	  String textChooser(int i) {
-      if (i == 0) {
-        return 'Mahal na mahal ni Aling Rosa ang kanyang anak na si Pina.  Inaalagaan niya itong mabuti at hindi niya pinagagawa sa bahay upang hindi mapagod.';
-      } else if (i == 1) {
-        return 'Isang araw ay nagkasakit si Aling Rosa.  Mahinang-mahina siya at hindi na makabangon sa higaan.  Nagmakaawa siya sa anak na magluto ng pagkain upang hindi sila magutom na mag-ina.';
-      } else {
-        return 'Isang araw, sa isang sulok ng kanilang bakuran ay nakita niya ang isang halaman na ang bunga ay tulad ng isang ulo na maraming mata.';
-      }
-    }
-
-    String animChooser(int i) {
-      if (i == 0) {
-        return 'assets/a1.mp4';
-      } else if (1 == 1) {
-        return 'assets/a2.mp4';
-      } else {
-        return 'assets/a5.mp4';
-      }
-    }
-
-    void refresh(BuildContext c, String route) {
-      dispose();
-      Navigator.of(c).pushNamed(route);
-    }
   }
+}
 
 class ChewieListItem extends StatefulWidget {
   // This will contain the URL/asset path which we want to play

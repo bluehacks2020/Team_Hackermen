@@ -1,16 +1,64 @@
+HACKERMEN
+Castro, Butch Adrian
+Javillo, Jared John
+Jocson, Jed Laszlo
+Pato, Jesus Alvaro
+
 # blue_hacks_kuwento
 
 A storybook mobile application for Blue Hacks 2020.
 
-## Getting Started
+---------------------------------------------------------------------
+---------------------------------------------------------------------
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
+INSTALLATION
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+On Android allow installation from unknown sources
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Install the .apk file
+
+---------------------------------------------------------------------
+OR
+
+install flutter: https://flutter.dev/docs/get-started/install
+
+Using flutter turn on developer options on your android device
+
+allow USB Debugging
+
+Connect your android device to your PC using a USB cable
+
+in the main directory of the flutter app, in a command line type: 
+
+> flutter run
+
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+App Guidelines
+
+- .dart 
+- flutter/material.dart
+- dart:async
+- package:chewie/chewie.dart
+- package:video_player/video_player.dart
+- package:animated_text_kit/animated_text_kit.dart
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+SOURCES AND REFERENCES
+
+https://www.youtube.com/watch?v=XP-4BiWsuaQ&feature=share&fbclid=IwAR0UH_eomwAyS2eA6EMz74E-xebpqikfsqsjk1fl64a7nsTeIGOedZhr_m8
+
+chewie: ^0.9.7
+
+cupertino_icons: ^0.1.2
+
+animated_text_kit: ^1.3.1
+
+https://www.youtube.com/watch?v=K1uH_SN4X0w&feature=youtu.be&fbclid=IwAR0ZHPCn608_qeHFMZyxbcB9InsqrCQ18gR_12HImblNcArEtacyiOLzwEM
+
+https://www.kapitbisig.com/philippines/tagalog-version-of-legends-mga-alamat-ang-alamat-ng-pinya_284.html?fbclid=IwAR1DmdA02g05_iC1Luyh1hZR6GM857m5J1FHdaMIaQnioF4ka_Xdw5ppBpc
