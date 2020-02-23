@@ -16,7 +16,9 @@ INSTALLATION
 
 On Android allow installation from unknown sources
 
-Install the .apk file
+Move app-arm64-v8a-release.apk from repository to your mobile device
+
+Install the .apk file on your mobile device
 
 ---------------------------------------------------------------------
 OR
@@ -25,7 +27,7 @@ install flutter: https://flutter.dev/docs/get-started/install
 
 Using flutter turn on developer options on your android device
 
-allow USB Debugging
+Allow USB Debugging
 
 Connect your android device to your PC using a USB cable
 
