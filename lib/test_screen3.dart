@@ -5,16 +5,14 @@ import 'package:chewie/chewie.dart';
 import 'package:video_player/video_player.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-
-class TestScreen extends StatefulWidget {
+class TestScreen3 extends StatefulWidget {
   @override
-  _TestScreenState createState() => _TestScreenState();
-
+  _TestScreen3State createState() => _TestScreen3State();
 }
 
-class _TestScreenState extends State<TestScreen> {
+class _TestScreen3State extends State<TestScreen3> {
   int index = 0;
-  
+
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -24,14 +22,14 @@ class _TestScreenState extends State<TestScreen> {
         children: <Widget>[
           ChewieListItem(
             videoPlayerController: VideoPlayerController.asset(
-              'assets/a1.mp4',
+              'assets/a5.mp4',
             ),
             looping: true,
           ),
           FadeAnimatedTextKit(
             duration: Duration(milliseconds: 20000),
             text: [
-              'Mahal na mahal ni Aling Rosa ang kanyang anak na si Pina.  Inaalagaan niya itong mabuti at hindi niya pinagagawa sa bahay upang hindi mapagod.'],
+              'Isang araw, sa isang sulok ng kanilang bakuran ay nakita niya ang isang halaman na ang bunga ay tulad ng isang ulo na maraming mata.'],
             textStyle: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 20.0,
@@ -39,25 +37,25 @@ class _TestScreenState extends State<TestScreen> {
               color: Colors.black,
             ),
           ),
-		  BottomNavigationBar(
+          BottomNavigationBar(
               onTap: (int index) {
-                Navigator.of(context).pushNamed('/TestScreen2');
+                Navigator.of(context).pushNamed('/MenuScreen');
               },
               items: <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_drop_up),
-              title: Text(' '),
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.arrow_forward_ios),
-              title: Text('Next'),
-            ),]
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.arrow_drop_up),
+                  title: Text(' '),
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.crop_din),
+                  title: Text('End'),
+                ),]
           )
         ],
       ),
     );
-    }
   }
+}
 
 class ChewieListItem extends StatefulWidget {
   // This will contain the URL/asset path which we want to play
@@ -103,7 +101,7 @@ class _ChewieListItemState extends State<ChewieListItem> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(0.0),
+      padding: const EdgeInsets.all(8.0),
       child: Chewie(
         controller: _chewieController,
       ),
