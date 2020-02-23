@@ -24,10 +24,6 @@ flutter:
   uses-material-design: true
   assets:
     - assets/home.png
-    - assets/download.png
-    - assets/film.png
-    - assets/hatdog.jpeg
-    - assets/checked.png
     - assets/home2.png
     - assets/splash_screen_title.png
     - assets/a1.mp4
