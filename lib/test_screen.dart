@@ -11,7 +11,8 @@ class TestScreen extends StatefulWidget {
 }
 
 class _TestScreenState extends State<TestScreen> {
-
+  int index = 0;
+  
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -28,22 +29,54 @@ class _TestScreenState extends State<TestScreen> {
           FadeAnimatedTextKit(
             duration: Duration(milliseconds: 20000),
             text: [
-              'Mahal na mahal ni Aling Rosa ang kanyang anak na si Pina.  Inaalagaan niya itong mabuti at hindi niya pinagagawa sa bahay upang hindi mapagod.  Masaya na siyang nagsisilbi sa anak at gumawa ng lahat ng trabaho sa bahay. Si Pina ay lumaki sa layaw dahil sa kagagawan ni Aling Rosa.',
-              'Gustuhin man niyang turuan itong gumawa sa bahay at magbago ng ugali ay hindi na niya magawa.  Ayaw nang baguhin ni Pina ang kanyang nakasanayang masarap na buhay.  Kung kaya’t napilitan si Aling Rosa na kahit na matanda na ay siya pa rin ang nagtatrabaho at gumawa ng lahat ng gawain sa bahay.',
-              'Isang araw ay nagkasakit si Aling Rosa.  Mahinang-mahina siya at hindi na makabangon sa higaan.  Nagmakaawa siya sa anak na magluto ng pagkain upang hindi sila magutom na mag-ina.'],
+              textChooser(index)],
             textStyle: TextStyle(
               fontFamily: 'Montserrat',
               fontSize: 20.0,
               fontWeight: FontWeight.bold,
               color: Colors.black,
             ),
-            onTap: () {},
+          ),
+		  BottomNavigationBar(
+              onTap: (int index) {
+			  refresh(context, '/TestScreen');
+			  },
+              items: <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_back_ios),
+              title: Text('Previous'),
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.arrow_forward_ios),
+              title: Text('Next'),
+            ),
+          ]
           )
         ],
       ),
     );
+    }
+
+	  String textChooser(int i) {
+      if (i == 0) {
+        return 'Mahal na mahal ni Aling Rosa ang kanyang anak na si Pina.  Inaalagaan niya itong mabuti at hindi niya pinagagawa sa bahay upang hindi mapagod.';
+      } else if (i == 1) {
+        return 'Isang araw ay nagkasakit si Aling Rosa.  Mahinang-mahina siya at hindi na makabangon sa higaan.  Nagmakaawa siya sa anak na magluto ng pagkain upang hindi sila magutom na mag-ina.';
+      } else {
+        return 'Isang araw, sa isang sulok ng kanilang bakuran ay nakita niya ang isang halaman na ang bunga ay tulad ng isang ulo na maraming mata.';
+      }
+    }
+
+    String animChooser(int i) {
+    if (i == 0) {
+      return
+    }
+    }
+    void refresh(BuildContext c, String route) {
+      dispose();
+      Navigator.of(c).pushNamed(route);
+    }
   }
-}
 
 class ChewieListItem extends StatefulWidget {
   // This will contain the URL/asset path which we want to play
@@ -99,7 +132,6 @@ class _ChewieListItemState extends State<ChewieListItem> {
   @override
   void dispose() {
     super.dispose();
-    // IMPORTANT to dispose of all the used resources
     widget.videoPlayerController.dispose();
     _chewieController.dispose();
   }
